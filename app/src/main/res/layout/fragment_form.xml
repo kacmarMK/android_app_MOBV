@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormFragment">
+
+    <TextView
+        android:id="@+id/textViewMain"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Zadajte udaje"
+        android:padding="20dp"
+        android:textSize="22sp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-black"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/textViewMain"
+        app:layout_constraintTop_toBottomOf="@id/textViewMain"
+        android:inputType="text"
+        android:hint="Zadajte meno"
+        android:gravity="center"
+        android:layout_marginLeft="90dp"
+        android:layout_marginRight="90dp"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/editTextCompany"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/editTextName"
+        app:layout_constraintTop_toBottomOf="@id/editTextName"
+        android:inputType="text"
+        android:hint="Zadajte nazov podniku"
+        android:gravity="center"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:id="@+id/editTextLatitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/editTextCompany"
+        app:layout_constraintTop_toBottomOf="@id/editTextCompany"
+        android:inputType="text"
+        android:hint="Zadajte zemepisnu sirku podniku"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/editTextLongitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/editTextLatitude"
+        app:layout_constraintTop_toBottomOf="@id/editTextLatitude"
+        android:inputType="text"
+        android:hint="Zadajte zemepisnu dlzku podniku"
+        android:gravity="center"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editTextLongitude"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Potvrdit"
+        android:layout_marginTop="60dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PubViewFragment">
+
+    <TextView
+        android:id="@+id/textViewName"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Meno"
+        android:padding="5dp"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-medium"/>
+
+    <TextView
+        android:id="@+id/textViewCompany"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="@id/textViewName"
+        app:layout_constraintTop_toBottomOf="@id/textViewName"
+        android:text="Podnik"
+        android:padding="5dp"
+        android:textSize="34sp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-black"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="250dp"
+        android:layout_height="350dp"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/textViewCompany"
+        app:layout_constraintStart_toStartOf="@id/textViewCompany"
+        app:layout_constraintTop_toBottomOf="@id/textViewCompany"
+        app:lottie_autoPlay="false"
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/beer_refill" />
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="ukaz na mape"
+        android:textSize="25sp"
+        android:layout_marginBottom="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

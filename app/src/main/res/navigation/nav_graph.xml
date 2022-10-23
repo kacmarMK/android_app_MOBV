@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/formFragment"
+        android:name="com.example.beeranimation.FormFragment"
+        android:label="fragment_form"
+        tools:layout="@layout/fragment_form" >
+        <action
+            android:id="@+id/action_formFragment_to_mainViewFragment"
+            app:destination="@id/pubViewFragment">
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/pubViewFragment"
+        android:name="com.example.beeranimation.PubViewFragment"
+        android:label="fragment_main_view"
+        tools:layout="@layout/fragment_pub_view" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="company"
+            app:argType="string" />
+        <argument
+            android:name="latitude"
+            app:argType="string" />
+        <argument
+            android:name="longitude"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.beeranimation.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_formFragment"
+            app:destination="@id/formFragment" />
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.beeranimation.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="pubName"
+            app:argType="string" />
+        <argument
+            android:name="pubLatitude"
+            app:argType="string" />
+        <argument
+            android:name="pubLongitude"
+            app:argType="string" />
+        <argument
+            android:name="pubWebpage"
+            app:argType="string" />
+        <argument
+            android:name="pubTelNum"
+            app:argType="string" />
+        <argument
+            android:name="pubOpenedHrs"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailFragment_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
+</navigation>

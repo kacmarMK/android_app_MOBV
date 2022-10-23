@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailFragment">
+
+    <TextView
+        android:id="@+id/textViewPubName"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Pub name"
+        android:padding="5dp"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-black"/>
+
+    <TextView
+        android:id="@+id/textViewPubLatitude"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="@id/textViewPubName"
+        app:layout_constraintTop_toBottomOf="@id/textViewPubName"
+        android:text="Pub latitude"
+        android:padding="5dp"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-medium"/>
+    <TextView
+        android:id="@+id/textViewPubLongitude"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="@id/textViewPubLatitude"
+        app:layout_constraintTop_toBottomOf="@id/textViewPubLatitude"
+        android:text="Pub longitude"
+        android:padding="5dp"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-medium"/>
+    <TextView
+        android:id="@+id/textViewPubWebpage"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="@id/textViewPubLongitude"
+        app:layout_constraintTop_toBottomOf="@id/textViewPubLongitude"
+        android:text="Pub webpage"
+        android:padding="5dp"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-medium"/>
+    <TextView
+        android:id="@+id/textViewPubTelNum"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="@id/textViewPubWebpage"
+        app:layout_constraintTop_toBottomOf="@id/textViewPubWebpage"
+        android:text="Pub telephone number"
+        android:padding="5dp"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-medium"/>
+    <TextView
+        android:id="@+id/textViewPubOpenHrs"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintStart_toStartOf="@id/textViewPubTelNum"
+        app:layout_constraintTop_toBottomOf="@id/textViewPubTelNum"
+        android:text="Pub opened hours"
+        android:padding="5dp"
+        android:textSize="25sp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_horizontal"
+        android:fontFamily="sans-serif-medium"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
