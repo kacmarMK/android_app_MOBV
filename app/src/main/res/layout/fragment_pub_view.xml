@@ -14,6 +14,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:text="Meno"
         android:padding="5dp"
+        android:textColor="@color/black"
         android:textSize="25sp"
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
@@ -23,6 +24,7 @@
         android:id="@+id/textViewCompany"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/textViewName"
         app:layout_constraintTop_toBottomOf="@id/textViewName"
         android:text="Podnik"
@@ -53,7 +55,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="ukaz na mape"
-        android:textSize="25sp"
-        android:layout_marginBottom="20dp"/>
+        android:backgroundTint="@color/mustard_yellow"
+        android:textSize="20dp"
+        android:layout_marginBottom="15dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,10 +11,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.airbnb.lottie.LottieAnimationView
 import com.example.beeranimation.databinding.FragmentDetailBinding
 import com.example.beeranimation.databinding.FragmentPubViewBinding
+import com.example.model.JsonData
 
 
 class DetailFragment : Fragment() {
@@ -51,6 +53,7 @@ class DetailFragment : Fragment() {
         webpage = args.pubWebpage
         telNum = args.pubTelNum
         openedHrs = args.pubOpenedHrs
+        val id = args.pubPos
 
         binding.textViewPubName.text = "Meno podniku: " + name
         binding.textViewPubLatitude.text = "Zem. šírka: " + latitude
@@ -59,8 +62,19 @@ class DetailFragment : Fragment() {
         binding.textViewPubTelNum.text = "Tel. číslo: " + telNum
         binding.textViewPubOpenHrs.text = "Otváracie hodiny: " + openedHrs
 
+        binding.apply {
+            buttonDelete.setOnClickListener {
+                deleteItem(id)
+                val direction = DetailFragmentDirections.actionDetailFragmentToListFragment()
+                findNavController().navigate(direction)
+            }
+        }
+
     }
 
+    private fun deleteItem(position: Int) {
+        JsonData.enterprises.removeAt(position)
+    }
 
 
     override fun onDestroyView() {

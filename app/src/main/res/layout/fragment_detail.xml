@@ -17,7 +17,8 @@
         android:textSize="25sp"
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
-        android:fontFamily="sans-serif-black"/>
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"/>
 
     <TextView
         android:id="@+id/textViewPubLatitude"
@@ -30,11 +31,13 @@
         android:textSize="25sp"
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
+        android:textColor="@color/black"
         android:fontFamily="sans-serif-medium"/>
     <TextView
         android:id="@+id/textViewPubLongitude"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/textViewPubLatitude"
         app:layout_constraintTop_toBottomOf="@id/textViewPubLatitude"
         android:text="Pub longitude"
@@ -47,6 +50,7 @@
         android:id="@+id/textViewPubWebpage"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/textViewPubLongitude"
         app:layout_constraintTop_toBottomOf="@id/textViewPubLongitude"
         android:text="Pub webpage"
@@ -59,6 +63,7 @@
         android:id="@+id/textViewPubTelNum"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/textViewPubWebpage"
         app:layout_constraintTop_toBottomOf="@id/textViewPubWebpage"
         android:text="Pub telephone number"
@@ -71,6 +76,7 @@
         android:id="@+id/textViewPubOpenHrs"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="@id/textViewPubTelNum"
         app:layout_constraintTop_toBottomOf="@id/textViewPubTelNum"
         android:text="Pub opened hours"
@@ -79,6 +85,17 @@
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
         android:fontFamily="sans-serif-medium"/>
+    <Button
+        android:id="@+id/buttonDelete"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Vymazat"
+        android:backgroundTint="#FF0000"
+        android:layout_margin="15dp"
+        android:textSize="20sp" />
 
 
 

@@ -1,29 +1,15 @@
 package com.example.beeranimation
 
-import android.content.ClipData.Item
-import android.content.res.AssetManager
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adapter.ItemAdapter
-import com.example.adapter.PubNameClickListener
-import com.example.beeranimation.databinding.ActivityMainBinding
-import com.example.beeranimation.databinding.FragmentFormBinding
 import com.example.beeranimation.databinding.FragmentListBinding
-import com.example.model.Enterprises
-import com.example.model.Pub
-import com.google.gson.Gson
-import java.util.Collections
+import com.example.model.JsonData
 
 
 class ListFragment : Fragment(){
@@ -45,12 +31,9 @@ class ListFragment : Fragment(){
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        var sorted = false
+
         super.onViewCreated(view, savedInstanceState)
-
-        val jsonStr = context?.assets?.readFile("pubs.json")
-        val dataset = Gson().fromJson(jsonStr, Enterprises::class.java)
-
-
 
         val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view)
         binding.apply {
@@ -59,29 +42,29 @@ class ListFragment : Fragment(){
                 findNavController().navigate(direction)
             }
             btnSort.setOnClickListener{
-                dataset.elements?.sortBy { it.tags.name }
+                sorted = if (sorted) {
+                    JsonData.enterprises?.sortByDescending { it.tags.name }
+                    false
+                } else {
+                    JsonData.enterprises?.sortBy { it.tags.name }
+                    true
+                }
+
                 if (recyclerView != null) {
                     recyclerView.adapter?.notifyDataSetChanged()
                 }
             }
         }
         if (recyclerView != null) {
-            recyclerView.adapter = context?.let { dataset.elements?.let { it1 -> ItemAdapter(it, it1) } }
+            recyclerView.adapter = ItemAdapter(requireContext(), JsonData.enterprises)
         }
 
-        // Use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        if (recyclerView != null) {
-            recyclerView.setHasFixedSize(true)
-        }
+        recyclerView?.setHasFixedSize(true)
 
 
 
 
     }
-    fun AssetManager.readFile(fileName: String) = open(fileName)
-        .bufferedReader()
-        .use { it.readText() }
 
 
 }
