@@ -17,6 +17,7 @@
         android:textSize="25sp"
         android:layout_marginTop="5dp"
         android:gravity="center_horizontal"
+        android:layout_margin="10dp"
         android:fontFamily="sans-serif-black"
         android:textColor="@color/black"/>
 
@@ -30,7 +31,7 @@
         android:padding="5dp"
         android:textSize="25sp"
         android:layout_marginTop="5dp"
-        android:gravity="center_horizontal"
+        android:layout_margin="10dp"
         android:textColor="@color/black"
         android:fontFamily="sans-serif-medium"/>
     <TextView
@@ -43,8 +44,8 @@
         android:text="Pub longitude"
         android:padding="5dp"
         android:textSize="25sp"
+        android:layout_margin="10dp"
         android:layout_marginTop="5dp"
-        android:gravity="center_horizontal"
         android:fontFamily="sans-serif-medium"/>
     <TextView
         android:id="@+id/textViewPubWebpage"
@@ -56,21 +57,21 @@
         android:text="Pub webpage"
         android:padding="5dp"
         android:textSize="25sp"
+        android:layout_margin="10dp"
         android:layout_marginTop="5dp"
-        android:gravity="center_horizontal"
         android:fontFamily="sans-serif-medium"/>
     <TextView
         android:id="@+id/textViewPubTelNum"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:textColor="@color/black"
+        android:layout_margin="10dp"
         app:layout_constraintStart_toStartOf="@id/textViewPubWebpage"
         app:layout_constraintTop_toBottomOf="@id/textViewPubWebpage"
         android:text="Pub telephone number"
         android:padding="5dp"
         android:textSize="25sp"
         android:layout_marginTop="5dp"
-        android:gravity="center_horizontal"
         android:fontFamily="sans-serif-medium"/>
     <TextView
         android:id="@+id/textViewPubOpenHrs"
@@ -82,8 +83,8 @@
         android:text="Pub opened hours"
         android:padding="5dp"
         android:textSize="25sp"
+        android:layout_margin="10dp"
         android:layout_marginTop="5dp"
-        android:gravity="center_horizontal"
         android:fontFamily="sans-serif-medium"/>
     <Button
         android:id="@+id/buttonDelete"

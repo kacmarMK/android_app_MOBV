@@ -1,20 +1,12 @@
 package com.example.beeranimation
 
-import android.content.res.AssetManager
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.recyclerview.widget.RecyclerView
-import com.example.adapter.ItemAdapter
 import com.example.beeranimation.databinding.ActivityMainBinding
-import com.example.beeranimation.databinding.FragmentListBinding
-import com.example.model.Enterprises
 import com.example.model.JsonData
-import com.google.gson.Gson
-import javax.sql.DataSource
 
 
 class MainActivity : AppCompatActivity() {

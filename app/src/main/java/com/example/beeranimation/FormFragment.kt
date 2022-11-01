@@ -1,8 +1,6 @@
 package com.example.beeranimation
 
-import android.content.res.AssetManager
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,10 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.beeranimation.databinding.FragmentFormBinding
-import com.example.model.Enterprises
-import com.example.model.Pub
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 
 
 class FormFragment : Fragment()  {

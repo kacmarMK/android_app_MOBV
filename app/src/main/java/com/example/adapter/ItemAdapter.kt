@@ -34,6 +34,7 @@ class ItemAdapter(
         val item = dataset[position]
 
         holder.textView.text = item.tags.name
+
         holder.textView.setOnClickListener {
             val direction = ListFragmentDirections.actionListFragmentToDetailFragment(
                     item.tags.name,

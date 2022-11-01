@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scrollbars="vertical"/>
-    <Button
+    <!--<Button
         android:id="@+id/buttonCreateNew"
         android:layout_width="50dp"
         android:layout_height="60dp"
@@ -31,5 +31,5 @@
         android:layout_margin="15dp"
         android:text="+"
         android:backgroundTint="@color/mustard_yellow"
-        android:textSize="30dp"/>
+        android:textSize="30dp"/>-->
 </FrameLayout>
