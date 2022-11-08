@@ -1,4 +1,4 @@
-package com.example.beeranimation
+package com.example.ui_controllers
 
 
 import android.animation.Animator
@@ -12,12 +12,13 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.airbnb.lottie.LottieAnimationView
+import com.example.beeranimation.R
 import com.example.beeranimation.databinding.FragmentPubViewBinding
 
 class PubViewFragment : Fragment() {
     private var _binding: FragmentPubViewBinding? = null
     private val binding get() = _binding!!
-    private val args: PubViewFragmentArgs by navArgs()
+    private val args: com.example.ui_controllers.PubViewFragmentArgs by navArgs()
     private var name = "Meno"
     private var company = "Podnik"
 

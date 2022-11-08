@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.beeranimation.ListFragmentDirections
+import com.example.ui_controllers.ListFragmentDirections
 import com.example.beeranimation.R
 import com.example.model.Pub
 

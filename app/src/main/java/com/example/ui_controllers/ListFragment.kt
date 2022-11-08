@@ -1,4 +1,4 @@
-package com.example.beeranimation
+package com.example.ui_controllers
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,24 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.adapter.ItemAdapter
+import com.example.PubsApplication
+import com.example.adapter.PubListAdapter
+import com.example.beeranimation.R
 import com.example.beeranimation.databinding.FragmentListBinding
-import com.example.model.JsonData
-import com.example.model.PubViewModel
+import com.example.view_model.PubViewModel
+import com.example.view_model.PubViewModelFactory
 
 
 class ListFragment : Fragment(){
     private var _binding: FragmentListBinding? = null
     private val binding get() = _binding!!
-
-    private val viewModel: PubViewModel by viewModels()
+    private val pubViewModel: PubViewModel by viewModels {
+        PubViewModelFactory((activity?.application as PubsApplication).repository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onCreateView(
@@ -45,7 +47,7 @@ class ListFragment : Fragment(){
             /*buttonCreateNew.setOnClickListener {
                 val direction = ListFragmentDirections.actionListFragmentToFormFragment()
                 findNavController().navigate(direction)
-            }*/
+            }
             btnSort.setOnClickListener{
                 sorted = if (sorted) {
                     JsonData.enterprises?.sortByDescending { it.tags.name }
@@ -58,10 +60,17 @@ class ListFragment : Fragment(){
                 if (recyclerView != null) {
                     recyclerView.adapter?.notifyDataSetChanged()
                 }
-            }
+            }*/
         }
         if (recyclerView != null) {
-            recyclerView.adapter = ItemAdapter(requireContext(), JsonData.enterprises)
+            //recyclerView.adapter = ItemAdapter(requireContext(), JsonData.enterprises)
+            val adapter = PubListAdapter()
+            recyclerView.adapter = adapter
+            recyclerView.layoutManager = LinearLayoutManager(context)
+            pubViewModel.allPubs.observe(viewLifecycleOwner, Observer { pubs ->
+                pubs?.let { adapter.submitList(it) }
+            })
+
         }
 
         recyclerView?.setHasFixedSize(true)

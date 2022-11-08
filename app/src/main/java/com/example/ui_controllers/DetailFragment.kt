@@ -1,4 +1,4 @@
-package com.example.beeranimation
+package com.example.ui_controllers
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +14,7 @@ import com.example.model.JsonData
 class DetailFragment : Fragment() {
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
-    private val args: DetailFragmentArgs by navArgs()
+    private val args: com.example.ui_controllers.DetailFragmentArgs by navArgs()
 
     private var name = ""
     private var latitude = ""
@@ -57,7 +57,8 @@ class DetailFragment : Fragment() {
         binding.apply {
             buttonDelete.setOnClickListener {
                 deleteItem(id)
-                val direction = DetailFragmentDirections.actionDetailFragmentToListFragment()
+                val direction =
+                    com.example.ui_controllers.DetailFragmentDirections.actionDetailFragmentToListFragment()
                 findNavController().navigate(direction)
             }
         }

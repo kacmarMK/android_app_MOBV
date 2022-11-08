@@ -1,4 +1,4 @@
-package com.example.beeranimation
+package com.example.ui_controllers
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,10 +34,13 @@ class FormFragment : Fragment()  {
 
         binding.apply {
             buttonConfirm.setOnClickListener {
-                val direction = FormFragmentDirections.actionFormFragmentToMainViewFragment(editTextName.text.toString(),
-                                                                                            editTextCompany.text.toString(),
-                                                                                            editTextLatitude.text.toString(),
-                                                                                            editTextLongitude.text.toString())
+                val direction =
+                    com.example.ui_controllers.FormFragmentDirections.actionFormFragmentToMainViewFragment(
+                        editTextName.text.toString(),
+                        editTextCompany.text.toString(),
+                        editTextLatitude.text.toString(),
+                        editTextLongitude.text.toString()
+                    )
 
 
 
